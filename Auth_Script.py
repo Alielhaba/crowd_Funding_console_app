@@ -17,7 +17,7 @@ def check_user_choise(OPer):
     elif OPer == "3":
         quit()
     else:
-        print(f"{Fore.RED}Enter Valid Nummber{Style.RESET_ALL}")
+        print(f"{Fore.LIGHTRED_EX}Invalid Option Try Again\n{Style.RESET_ALL}")
         inp=input(">> ")
         check_user_choise(inp)
         

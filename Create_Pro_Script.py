@@ -5,7 +5,7 @@ import json
 import Login_Script as login
 
 dictionary={}
-list_variables =[ "User_Email","Project_Title" , "Project_Details" , "Project_Target", "Project_Started_at",  "Project_Ended_at" ]
+list_variables =[ "User_Email","Project_Title" , "Project_Details" , "Project_Target", "Start_Date",  "End_Date" ]
 
 #---------------------------------------------------------------------------------------
 #Functions

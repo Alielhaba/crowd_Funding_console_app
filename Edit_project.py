@@ -47,14 +47,15 @@ def check_user_choise(OPer):
         E_D = input("> Enter New Project Start Date : ")
         End_pro=create.check_date(E_D)
         End_Start_Com(S_T,E_D)
-        file_data["Project_data"][i]["Project_Started_at"] = Start_pro
-        file_data["Project_data"][i]["Project_Ended_at"] = End_pro
+        file_data["Project_data"][i]["Start_Date"] = Start_pro
+        file_data["Project_data"][i]["End_Date"] = End_pro
         update_value()
     elif OPer == "6":
         quit()
     else:
-        print(f"{Fore.LIGHTYELLOW_EX}Invalid Choise{Style.RESET_ALL}")
-        
+        print(f"{Fore.LIGHTRED_EX}Invalid Option Try Again\n{Style.RESET_ALL}")
+        inp=input(">> ")
+        check_user_choise(inp)        
 #--------------------------------- Type of Edit function------------------------------------------- 
 
 def type_of_edit():
