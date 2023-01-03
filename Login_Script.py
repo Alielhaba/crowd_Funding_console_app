@@ -1,10 +1,15 @@
-
+#--------------------------------- -- Import Part ------------------------------------------- 
 from colorama import init as colorama_init
 from colorama import Fore
 from colorama import Style
-
+import Pro_Menu as Menu
+import json
+#--------------------------------- Declaring Variables -----------------------------------
 
 log_success=""
+list_variables =[ "First_Name" , "Last_Name" , "email", "Password",  "Mobile_Phone" ]
+
+#----------------------------------- Login Function ------------------------------------------- 
 
 def login ():
     print(f"{Fore.LIGHTBLACK_EX}\n\n************************************************************************{Style.RESET_ALL}")
@@ -15,8 +20,39 @@ def login ():
     x=0
     Email = input("> Email : ")
     Pasword =input("> Password : ")
+    
+    file=open('User_Data.json', 'r+')
+    file_data = json.load(file)
+    size=len(file_data["Users_Data"])
+    
+    for i in range(size):
+        #check User's Project
+        if file_data["Users_Data"][i]["email"] == Email and file_data["Users_Data"][i]["Password"] == Pasword:
+            print("found")
+            global log_success
+            log_success = Email
+            Menu.Menu_func()
+            break
+    else:
+        print(f"{Fore.RED}ERROR : Email or Password is invalid.{Style.RESET_ALL}")
+        print(f"{Fore.LIGHTGREEN_EX}Please Re-enter your email and password.{Style.RESET_ALL}")
+        login()
 
-    try:
+    file.close()
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+"""try:
         Data_Login = open("Registration_file.txt")
         print(Data_Login)
     except Exception as e:
@@ -40,7 +76,7 @@ def login ():
             login()
             
             
-        Data_Login.close()
+        Data_Login.close()"""
         
         
 

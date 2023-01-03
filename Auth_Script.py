@@ -1,13 +1,15 @@
-#--------------------------------- User Choise function------------------------------------------- 
+#--------------------------------- Import Part ------------------------------------------- 
 from colorama import init as colorama_init
 from colorama import Fore
 from colorama import Style
 import Login_Script as login
 colorama_init()
+#--------------------------------- Import Part ------------------------------------------- 
 print(f"{Fore.LIGHTBLACK_EX}\n\n************************************************************************{Style.RESET_ALL}")
-print(f"{Fore.LIGHTBLACK_EX}**************************** Crowd-Funding *****************************{Style.RESET_ALL}")
+print(f"{Fore.LIGHTBLACK_EX}**************************** {Fore.LIGHTYELLOW_EX}Crowd-Funding{Fore.LIGHTBLACK_EX} *****************************{Style.RESET_ALL}")
 print(f"{Fore.LIGHTBLACK_EX}************************************************************************\n{Style.RESET_ALL}")
 
+#--------------------------------- Check User Choise Function ------------------------------------------- 
 def check_user_choise(OPer):
     
     if OPer == "1" :
