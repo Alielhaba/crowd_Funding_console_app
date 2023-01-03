@@ -15,7 +15,7 @@ def check_user_choise(OPer):
     elif OPer == "3":
         import Edit_project
     elif OPer == "4":
-        pass
+        import Delete_Pro
     elif OPer == "5":
         pass
     elif OPer == "6":
