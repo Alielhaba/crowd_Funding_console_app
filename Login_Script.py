@@ -4,6 +4,7 @@ from colorama import Fore
 from colorama import Style
 import Pro_Menu as Menu
 import json
+import maskpass
 #--------------------------------- Declaring Variables -----------------------------------
 
 log_success=""
@@ -19,7 +20,7 @@ def login ():
     print(f"{Fore.LIGHTBLACK_EX}************************************************************************\n{Style.RESET_ALL}")
     x=0
     Email = input("> Email : ")
-    Pasword =input("> Password : ")
+    Password = maskpass.askpass(prompt="> Password ", mask="*")
     
     file=open('User_Data.json', 'r+')
     file_data = json.load(file)
@@ -27,7 +28,7 @@ def login ():
     
     for i in range(size):
         #check User's Project
-        if file_data["Users_Data"][i]["email"] == Email and file_data["Users_Data"][i]["Password"] == Pasword:
+        if file_data["Users_Data"][i]["email"] == Email and file_data["Users_Data"][i]["Password"] == Password:
             print("found")
             global log_success
             log_success = Email

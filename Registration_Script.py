@@ -1,6 +1,7 @@
 #--------------------------------- Import Part ------------------------------------------- 
 import re
 import json
+import maskpass
 from colorama import init as colorama_init
 from colorama import Fore
 from colorama import Style
@@ -116,15 +117,15 @@ F_Name= chech_Name(First_Name)
 Last_Name = input("> Last Name : ")
 L_Name=chech_Name(Last_Name)
 
+Mobile_Phone = input("> Mobile Phone : ")
+
 email = input("> Email : ")
 Email=chec_Email(email)
 
-Mobile_Phone = input("> Mobile Phone : ")
 
-    
-Password = input("> Password : ")
-Confirm_Pass = input("> Confirm Password : ")
-Pass=check_Pass(Password,Confirm_Pass)
+Password = maskpass.askpass(prompt="> Password ", mask="*")
+Confirm_pass = maskpass.askpass(prompt="> Confirm pass ", mask="*")
+Pass=check_Pass(Password,Confirm_pass)
 
 print("************************************************************************\n")
 #-------------------------------- Storing Data ----------------------------------------
